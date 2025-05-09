@@ -11,7 +11,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   end
 
   def parse_url_pattern
-    unless match = url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)})
+    unless (match = url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)}))
       raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Repository."
     end
 
@@ -30,11 +30,20 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
 
   def set_github_token
     @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
-    unless @github_token
-      raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
-    end
+    # Try public access check first
+    begin
+      GitHub.repository_public?(@owner, @repo)
+      opoo "Repository #{@owner}/#{@repo} is public. Skipping token usage."
+      @github_token = nil
+      return
+    rescue GitHub::HTTPNotFoundError
+      # If the repository is private, we need to use the token
+      unless @github_token
+        raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
+      end
 
-    validate_github_repository_access!
+      validate_github_repository_access!
+    end
   end
 
   def validate_github_repository_access!
@@ -42,7 +51,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     GitHub.repository(@owner, @repo)
   rescue GitHub::HTTPNotFoundError
     # We only handle HTTPNotFoundError here,
-    # becase AuthenticationFailedError is handled within util/github.
+    # because AuthenticationFailedError is handled within util/github.
     message = <<~EOS
       HOMEBREW_GITHUB_API_TOKEN can not access the repository: #{@owner}/#{@repo}
       This token may not have permission to access the repository or the url of formula may be incorrect.
@@ -71,7 +80,11 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   end
 
   def download_url
-    "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
+    if @github_token
+      "https://#{@github_token}@github.com/#{@owner}/#{@repo}/#{@filepath}"
+    else
+      "https://github.com/#{@owner}/#{@repo}/#{@filepath}"
+    end
   end
 
   private
