@@ -13,7 +13,7 @@ Once Foundry Local is in Public Preview, this repo will be public and you will n
    - Press `Generate Token` and copy the token value
   
  2. Set HOMEBREW_GITHUB_API_TOKEN:
-    - export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>
+    - `export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>`
 
  3. Install Foundry Local using homebrew
     - brew tap microsoft/foundrylocal
@@ -28,10 +28,10 @@ Note: these instructions assume you are using your personal GitHub account and i
    - Generate new token (classic)
    - Click the `repo` button to give your token acccess to the private repo
    - Press `Generate Token` and copy the token value
-   - ** Configure SSO and authorize Microsoft **
+   - **Configure SSO and authorize Microsoft**
   
  2. Set HOMEBREW_GITHUB_API_TOKEN:
-    - export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>
+    - `export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>`
 
  3. Install Foundry Local using homebrew
     - brew tap microsoft/foundrylocal
