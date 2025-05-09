@@ -11,7 +11,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   end
 
   def parse_url_pattern
-    unless (match = url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)}))
+    unless match = url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)})
       raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Repository."
     end
 
