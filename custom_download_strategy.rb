@@ -32,16 +32,15 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
     # Try public access check first
     begin
-      GitHub.repository_public?(@owner, @repo)
+      GitHub.repository(@owner, @repo)
       opoo "Repository #{@owner}/#{@repo} is public. Skipping token usage."
       @github_token = nil
       return
-    rescue Octokit::NotFound
+    rescue GitHub::API::HTTPNotFoundError
       # If the repository is private, we need to use the token
       unless @github_token
         raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
       end
-
       validate_github_repository_access!
     end
   end
@@ -49,7 +48,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   def validate_github_repository_access!
     # Test access to the repository
     GitHub.repository(@owner, @repo)
-  rescue Octokit::NotFound
+  rescue GitHub::API::HTTPNotFoundError
     # We only handle HTTPNotFoundError here,
     # because AuthenticationFailedError is handled within util/github.
     message = <<~EOS
