@@ -1,4 +1,4 @@
-# Homebrew formula for Foundry Local
+# Install Foundry Local on mac
 
 If you are seeing this README, then you have access to this private repo and you have the ability to install the Foundry Local mac installer.
 
