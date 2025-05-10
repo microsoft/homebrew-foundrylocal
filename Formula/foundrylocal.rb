@@ -8,8 +8,8 @@ class Foundrylocal < Formula
 
   def install
     bin.install "bin/foundry"
-    lib.install "bin/libonnxruntime-genai.dylib"
-    lib.install "bin/libonnxruntime.dylib"
+    bin.install "bin/libonnxruntime-genai.dylib"
+    bin.install "bin/libonnxruntime.dylib"
     bin.install "bin/Inference.Service.Agent"
     lib.install "bin/onnx.yml"
   end
