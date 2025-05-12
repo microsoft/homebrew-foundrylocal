@@ -11,6 +11,6 @@ class Foundrylocal < Formula
     bin.install "bin/libonnxruntime-genai.dylib"
     bin.install "bin/libonnxruntime.dylib"
     bin.install "bin/Inference.Service.Agent"
-    lib.install "bin/onnx.yml"
+    bin.install "bin/onnx.yml"
   end
 end
