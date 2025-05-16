@@ -7,7 +7,7 @@ Once Foundry Local is in Public Preview, this repo will be public and you will n
 ## Install for mac when you are an external contributor
 
 1. Create a GitHub PAT (personal access token):
-   - Go to `Settings -> Developer Settings`
+   - In your GitHub account, go to `Settings -> Developer Settings`
    - Generate new token (classic)
    - Click the `repo` button to give your token acccess to the private repo
    - Press `Generate Token` and copy the token value
