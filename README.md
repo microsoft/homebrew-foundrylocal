@@ -24,7 +24,7 @@ Once Foundry Local is in Public Preview, this repo will be public and you will n
 Note: these instructions assume you are using your personal GitHub account and it is linked with the Microsoft GitHub organization.
 
 1. Create a GitHub PAT (personal access token):
-   - Go to `Settings -> Developer Settings`
+   - In your GitHub account, go to `Settings -> Developer Settings`
    - Generate new token (classic)
    - Click the `repo` button to give your token acccess to the private repo
    - Press `Generate Token` and copy the token value
