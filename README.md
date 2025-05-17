@@ -10,15 +10,15 @@ Once Foundry Local is in Public Preview, this repo will be public and you will n
    - In your GitHub account, go to `Settings -> Developer Settings`
    - Generate new token (classic)
    - Click the `repo` button to give your token acccess to the private repo
+     ![Generate classic token with repo access](image-1.png)
    - Press `Generate Token` and copy the token value
-  
+
  2. Set HOMEBREW_GITHUB_API_TOKEN:
     - `export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>`
 
  3. Install Foundry Local using homebrew
-    - brew tap microsoft/foundrylocal https://${HOMEBREW_GITHUB_API_TOKEN}@github.com/microsoft/homebrew-foundrylocal.git
-    - brew install foundrylocal
-   
+    - brew install microsoft/foundrylocal/foundrylocal
+
 ## Install for mac when you are a Microsoft employees
 
 Note: these instructions assume you are using your personal GitHub account and it is linked with the Microsoft GitHub organization.
@@ -27,20 +27,32 @@ Note: these instructions assume you are using your personal GitHub account and i
    - In your GitHub account, go to `Settings -> Developer Settings`
    - Generate new token (classic)
    - Click the `repo` button to give your token acccess to the private repo
+     ![Generate classic token with repo access](image-2.png)
    - Press `Generate Token` and copy the token value
    - **Configure SSO and authorize Microsoft**
-  
+     ![Authorize Microsoft](image.png)
+
  2. Set HOMEBREW_GITHUB_API_TOKEN:
     - `export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>`
 
  3. Install Foundry Local using homebrew
-    - brew tap microsoft/foundrylocal https://${HOMEBREW_GITHUB_API_TOKEN}@github.com/microsoft/homebrew-foundrylocal.git
-    - brew install foundrylocal
-   
+    - brew install microsoft/foundrylocal/foundrylocal
+
+## Update to new release
+
+`brew update`
+
 ## Uninstall
 
 `brew rm foundry local`
 
+## Reset everything
+
+```
+brew rm microsoft/foundrylocal
+brew untap microsoft/foundrylocal
+brew cleanup --scrub
+```
 
 ## Contributing
 
@@ -58,8 +70,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
@@ -78,7 +90,7 @@ Instead, please report them to the Microsoft Security Response Center (MSRC) at 
 
 If you prefer to submit without logging in, send email to [secure@microsoft.com](mailto:secure@microsoft.com).  If possible, encrypt your message with our PGP key; please download it from the [Microsoft Security Response Center PGP Key page](https://aka.ms/security.md/msrc/pgp).
 
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Additional information can be found at [microsoft.com/msrc](https://www.microsoft.com/msrc). 
+You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Additional information can be found at [microsoft.com/msrc](https://www.microsoft.com/msrc).
 
 Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
 
@@ -101,9 +113,3 @@ We prefer all communications to be in English.
 ### Policy
 
 Microsoft follows the principle of [Coordinated Vulnerability Disclosure](https://aka.ms/security.md/cvd).
-
-
-      
-
-
-
