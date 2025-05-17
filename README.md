@@ -17,7 +17,7 @@ Once Foundry Local is in Public Preview, this repo will be public and you will n
     - `export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>`
 
  3. Install Foundry Local using homebrew
-    - brew install microsoft/foundrylocal/foundrylocal
+    - `brew install microsoft/foundrylocal/foundrylocal`
 
 ## Install for mac when you are a Microsoft employees
 
@@ -36,7 +36,7 @@ Note: these instructions assume you are using your personal GitHub account and i
     - `export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>`
 
  3. Install Foundry Local using homebrew
-    - brew install microsoft/foundrylocal/foundrylocal
+    - `brew install microsoft/foundrylocal/foundrylocal`
 
 ## Update to new release
 
