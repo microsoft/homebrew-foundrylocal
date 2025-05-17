@@ -49,7 +49,7 @@ Note: these instructions assume you are using your personal GitHub account and i
 ## Reset everything
 
 ```
-brew rm microsoft/foundrylocal
+brew rm foundrylocal
 brew untap microsoft/foundrylocal
 brew cleanup --scrub
 ```
