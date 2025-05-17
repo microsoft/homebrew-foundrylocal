@@ -44,7 +44,7 @@ Note: these instructions assume you are using your personal GitHub account and i
 
 ## Uninstall
 
-`brew rm foundry local`
+`brew rm foundrylocal`
 
 ## Reset everything
 
