@@ -15,5 +15,7 @@ class Foundrylocal < Formula
     bin.install "bin/libonnxruntime.dylib"
     
     bin.install "bin/appsettings.json"
+
+    bin.install_symlink "bin/foundry"
   end
 end
