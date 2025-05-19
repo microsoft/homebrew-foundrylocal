@@ -11,6 +11,6 @@ class Foundrylocal < Formula
     libexec.install Dir["bin/libonnxruntime.dylib"]
     libexec.install Dir["bin/appsettings.json"]
 
-    bin.install libexec/"foundry"
+    bin.install_symlink libexec/"foundry"
   end
 end
