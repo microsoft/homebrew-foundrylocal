@@ -1,52 +1,33 @@
 # Install Foundry Local on mac
 
-If you are seeing this README, then you have access to this private repo and you have the ability to install the Foundry Local mac installer.
+## Foundry Local
 
-Once Foundry Local is in Public Preview, this repo will be public and you will not need to authorize with a token.
+Foundry Local gives you the ability to download and run AI models on device. This repo contains the brew formula to install on mac. 
 
-## Install for mac when you are an external contributor
+The main Foundry Local repo with releases, SDKs and samples can be found here: https://github.com/microsoft/Foundry-Local
 
-1. Create a GitHub PAT (personal access token):
-   - In your GitHub account, go to `Settings -> Developer Settings`
-   - Generate new token (classic)
-   - Click the `repo` button to give your token acccess to the private repo
-     ![Generate classic token with repo access](image-1.png)
-   - Press `Generate Token` and copy the token value
 
- 2. Set HOMEBREW_GITHUB_API_TOKEN:
-    - `export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>`
+### Install on mac
 
- 3. Install Foundry Local using homebrew
-    - `brew install microsoft/foundrylocal/foundrylocal`
+```
+brew tap microsoft/foundrylocal
+brew install foundrylocal
+```
 
-## Install for mac when you are a Microsoft employees
+### Update to a newer version
 
-Note: these instructions assume you are using your personal GitHub account and it is linked with the Microsoft GitHub organization.
+```
+brew update
+```
 
-1. Create a GitHub PAT (personal access token):
-   - In your GitHub account, go to `Settings -> Developer Settings`
-   - Generate new token (classic)
-   - Click the `repo` button to give your token acccess to the private repo
-     ![Generate classic token with repo access](image-2.png)
-   - Press `Generate Token` and copy the token value
-   - **Configure SSO and authorize Microsoft**
-     ![Authorize Microsoft](image.png)
+### Uninstall
 
- 2. Set HOMEBREW_GITHUB_API_TOKEN:
-    - `export HOMEBREW_GITHUB_API_TOKEN=<Github_TOKEN>`
+```
+brew rm foundrylocal
+brew untap microsoft/foundrylocal
+```
 
- 3. Install Foundry Local using homebrew
-    - `brew install microsoft/foundrylocal/foundrylocal`
-
-## Update to new release
-
-`brew update`
-
-## Uninstall
-
-`brew rm foundrylocal`
-
-## Reset everything
+### Cleanup
 
 ```
 brew rm foundrylocal
