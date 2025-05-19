@@ -5,12 +5,12 @@ class Foundrylocal < Formula
   sha256 "95b1747a7e89e8ec690b3fcb6a46bdd4c2fd07faa3c28fcdc98ee842a32f9b8b"
 
   def install
-    libexec.install Dir["bin/foundry"]
-    libexec.install Dir["bin/Inference.Service.Agent"]
-    libexec.install Dir["bin/libonnxruntime-genai.dylib"]
-    libexec.install Dir["bin/libonnxruntime.dylib"]
-    libexec.install Dir["bin/appsettings.json"]
+    prefix.install Dir["bin/foundry"]
+    prefix.install Dir["bin/Inference.Service.Agent"]
+    prefix.install Dir["bin/libonnxruntime-genai.dylib"]
+    prefix.install Dir["bin/libonnxruntime.dylib"]
+    prefix.install Dir["bin/appsettings.json"]
 
-    bin.install libexec/"foundry"
+    bin.install prefix/"foundry"
   end
 end
