@@ -5,6 +5,8 @@ class Foundrylocal < Formula
   sha256 "95b1747a7e89e8ec690b3fcb6a46bdd4c2fd07faa3c28fcdc98ee842a32f9b8b"
 
 
+  keg_only "Install FoundryLocal as a keg-only so as to avoid polluting the global lib/include paths with internal libraries"
+
   def install
     bin.install "bin/foundry"
     bin.install "bin/Inference.Service.Agent"
