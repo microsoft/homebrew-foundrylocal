@@ -7,9 +7,9 @@ class Foundrylocal < Formula
   def install
     bin.install "bin/foundry"
 
-    lib.install "lib/libonnxruntime-genai.dylib"
-    lib.install "lib/libonnxruntime.dylib"
-    lib.install "lib/Inference.Service.Agent"
-    lib.install "lib/appsettings.json"
+    lib.install "bin/libonnxruntime-genai.dylib"
+    lib.install "bin/libonnxruntime.dylib"
+    lib.install "bin/Inference.Service.Agent"
+    lib.install "bin/appsettings.json"
   end
 end
