@@ -8,14 +8,12 @@ class Foundrylocal < Formula
   keg_only "Install FoundryLocal as a keg-only so as to avoid polluting the global lib/include paths with internal libraries"
 
   def install
-    bin.install "bin/foundry"
-    bin.install "bin/Inference.Service.Agent"
+    prefix.install Dir["bin/foundry"]
+    prefix.install Dir["bin/Inference.Service.Agent"]
+    prefix.install Dir["bin/libonnxruntime-genai.dylib"]
+    prefix.install Dir["bin/libonnxruntime.dylib"]
+    prefix.install Dir["bin/appsettings.json"]
 
-    bin.install "bin/libonnxruntime-genai.dylib"
-    bin.install "bin/libonnxruntime.dylib"
-    
-    bin.install "bin/appsettings.json"
-
-    bin.install_symlink "bin/foundry"
+    bin.install_symlink prefix/"bin/foundry"
   end
 end
