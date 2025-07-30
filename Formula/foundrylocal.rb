@@ -1,8 +1,8 @@
 class Foundrylocal < Formula
   desc "Formula for Foundry Local CLI and Inference Agent installer"
   homepage "https://github.com/microsoft/Foundry-Local"
-  url "https://github.com/microsoft/Foundry-Local/releases/download/v0.4.91/FoundryLocal-osx-arm64-0.4.92.zip"
-  sha256 "b9bd0a46964a2e2aa08f2bd1c435a36e82f3e0b5f6ad849b3a4c71822bfd4748"
+  url "https://github.com/microsoft/Foundry-Local/releases/download/v0.5.117/FoundryLocal-osx-arm64-0.5.117.zip"
+  sha256 "43fffd69b2e6f38706072cd09a3b70e30a0fdd848d3076983224db5c0c9253f4"
 
   def install
     prefix.install Dir["bin/foundry"]
