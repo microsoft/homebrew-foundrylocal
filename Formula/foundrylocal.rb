@@ -3,6 +3,7 @@ class Foundrylocal < Formula
   homepage "https://github.com/microsoft/Foundry-Local"
   url "https://github.com/microsoft/Foundry-Local/releases/download/v0.7.120/FoundryLocal-osx-arm64-0.7.120.zip"
   sha256 "bd52f2c491f851432c52d01f756c963a1fdfdeae8e31228f42fb854191bb158e"
+  license "https://github.com/microsoft/Foundry-Local/blob/main/LICENSE"
 
   def install
     prefix.install Dir["bin/foundry"]
