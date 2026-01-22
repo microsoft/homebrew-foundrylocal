@@ -1,8 +1,8 @@
 class Foundrylocal < Formula
   desc "Formula for Foundry Local CLI and Inference Agent installer"
   homepage "https://github.com/microsoft/Foundry-Local"
-  url "https://github.com/microsoft/Foundry-Local/releases/download/v0.8.117/FoundryLocal-osx-arm64-0.8.117.zip"
-  sha256 "efd2097ac060fd215cc01fb98061e633dab27955f38101d6b8f4540f8bd30fe3"
+  url "https://github.com/microsoft/Foundry-Local/releases/download/v0.8.119/FoundryLocal-osx-arm64-0.8.119.zip"
+  sha256 "dc9b321c8eeac3b05586535cb811e45342a0e4239d08e132209684d010ff9572"
   license "https://github.com/microsoft/Foundry-Local/blob/main/LICENSE"
 
   def install
