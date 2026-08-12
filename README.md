@@ -1,18 +1,26 @@
-# Install Foundry Local on mac
+# Install Foundry Local on macOS
 
 ## Foundry Local
 
-Foundry Local gives you the ability to download and run AI models on device. This repo contains the brew formula to install on mac. 
+Foundry Local gives you the ability to download and run AI models on device. This repository contains the Homebrew formula for the preview Foundry Local CLI on Apple Silicon Macs running macOS 12 or newer.
 
-The main Foundry Local repo with releases, SDKs and samples can be found here: https://github.com/microsoft/Foundry-Local
+The main Foundry Local repository with releases, SDKs, and samples can be found here: https://github.com/microsoft/Foundry-Local
 
-
-### Install on mac
+### Install on macOS
 
 ```
 brew tap microsoft/foundrylocal
 brew install foundrylocal
 ```
+
+Verify the installation:
+
+```
+foundry --version
+foundry status
+```
+
+The preview CLI uses `foundry server start`, `foundry server stop`, and related `foundry server` commands in place of the older `foundry service` commands.
 
 ### Update to a newer version
 
