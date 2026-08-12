@@ -20,10 +20,12 @@ class Foundrylocal < Formula
                     "#{runtime_dir}/onnxruntime-genai.dll",
                     "#{runtime_dir}/onnxruntime.dll"
 
+    chmod 0755, libexec/"foundrylocald"
     bin.install_symlink libexec/"foundry"
   end
 
   test do
+    assert_predicate libexec/"foundrylocald", :executable?
     assert_equal version.to_s, shell_output("#{bin}/foundry --version").strip
   end
 end
