@@ -1,13 +1,13 @@
 class Foundrylocal < Formula
   desc "Preview CLI for running generative AI models locally"
   homepage "https://github.com/microsoft/Foundry-Local"
-  url "https://github.com/microsoft/Foundry-Local/releases/download/cli-preview-0.10.3/foundry-0.10.3-osx-arm64.zip"
-  version "0.10.3"
-  sha256 "cc29c1c54a44131ed1db8fd920459b3c9420465177e45061a6f84e84eacf234f"
+  url "https://github.com/microsoft/Foundry-Local/releases/download/cli-preview-0.11.0/foundry-0.11.0-osx-arm64.zip"
+  version "0.11.0"
+  sha256 "e309bf717fd3c610875e0f713471aaee6df8893c06d427b49e1bfa13b6f938a2"
   license "https://github.com/microsoft/Foundry-Local/blob/main/LICENSE"
 
   depends_on arch: :arm64
-  depends_on macos: :monterey
+  depends_on macos: :sequoia
 
   def install
     runtime_dir = "bin"
@@ -15,10 +15,8 @@ class Foundrylocal < Formula
                     "#{runtime_dir}/foundrylocald",
                     "#{runtime_dir}/libonnxruntime-genai.dylib",
                     "#{runtime_dir}/libonnxruntime.dylib",
-                    "#{runtime_dir}/Microsoft.AI.Foundry.Local.Core.dylib",
-                    "#{runtime_dir}/onnxruntime_providers_shared.dll",
-                    "#{runtime_dir}/onnxruntime-genai.dll",
-                    "#{runtime_dir}/onnxruntime.dll"
+                    "#{runtime_dir}/libfoundry_local.dylib",
+                    "#{runtime_dir}/notices"
 
     chmod 0755, libexec/"foundrylocald"
     bin.install_symlink libexec/"foundry"

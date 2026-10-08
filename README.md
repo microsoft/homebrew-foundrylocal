@@ -2,7 +2,7 @@
 
 ## Foundry Local
 
-Foundry Local gives you the ability to download and run AI models on device. This repository contains the Homebrew formula for the preview Foundry Local CLI on Apple Silicon Macs running macOS 12 or newer.
+Foundry Local gives you the ability to download and run AI models on device. This repository contains the Homebrew formula for the preview Foundry Local CLI on Apple Silicon Macs running macOS 15 or newer.
 
 The main Foundry Local repository with releases, SDKs, and samples can be found here: https://github.com/microsoft/Foundry-Local
 
