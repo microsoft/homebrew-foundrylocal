@@ -5,6 +5,7 @@ class Foundrylocal < Formula
   version "0.11.0"
   sha256 "e309bf717fd3c610875e0f713471aaee6df8893c06d427b49e1bfa13b6f938a2"
   license "https://github.com/microsoft/Foundry-Local/blob/main/LICENSE"
+  revision 1
 
   depends_on arch: :arm64
   depends_on macos: :sequoia
@@ -19,11 +20,14 @@ class Foundrylocal < Formula
                     "#{runtime_dir}/notices"
 
     chmod 0755, libexec/"foundrylocald"
+    libexec.install_symlink "libonnxruntime.dylib" => "libonnxruntime.1.dylib"
     bin.install_symlink libexec/"foundry"
   end
 
   test do
     assert_predicate libexec/"foundrylocald", :executable?
+    assert_predicate libexec/"libonnxruntime.1.dylib", :symlink?
+    assert_equal (libexec/"libonnxruntime.dylib").realpath, (libexec/"libonnxruntime.1.dylib").realpath
     assert_equal version.to_s, shell_output("#{bin}/foundry --version").strip
   end
 end
