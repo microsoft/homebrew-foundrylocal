@@ -1,11 +1,10 @@
 class Foundrylocal < Formula
   desc "Preview CLI for running generative AI models locally"
   homepage "https://github.com/microsoft/Foundry-Local"
-  url "https://github.com/microsoft/Foundry-Local/releases/download/cli-preview-0.11.0/foundry-0.11.0-osx-arm64.zip"
-  version "0.11.0"
-  sha256 "e309bf717fd3c610875e0f713471aaee6df8893c06d427b49e1bfa13b6f938a2"
+  url "https://github.com/microsoft/Foundry-Local/releases/download/cli-preview-0.12.0/foundry-0.12.0-osx-arm64.zip"
+  version "0.12.0"
+  sha256 "f26b891e9d8be3a765fac0346bd638c44806510e3f1f52fdce57476e5ba48b59"
   license "https://github.com/microsoft/Foundry-Local/blob/main/LICENSE"
-  revision 1
 
   depends_on arch: :arm64
   depends_on macos: :sequoia
