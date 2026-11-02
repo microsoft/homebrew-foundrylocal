@@ -43,6 +43,45 @@ brew untap microsoft/foundrylocal
 brew cleanup --scrub
 ```
 
+## Updating the formula
+
+Maintainers can update the release URL, version, and SHA-256 using Python 3 (no
+additional packages required). From the repository root, either download the
+published release:
+
+```sh
+python3 scripts/update_formula.py --version 0.13.0
+```
+
+Or use an already-downloaded archive; its filename supplies the version:
+
+```sh
+python3 scripts/update_formula.py --archive ~/Downloads/foundry-0.13.0-osx-arm64.zip
+```
+
+Both options can be supplied together to check that the version matches the
+filename. The script validates ZIP integrity and the required installation paths
+before changing the formula. When using a local archive, ensure it is the
+published release asset; compare its SHA-256 with the digest on the GitHub
+release. Downloaded temporary files are cleaned up under the ignored `build/`
+directory.
+
+Review the diff, run the script tests, and check Homebrew style before opening a PR:
+
+```sh
+python3 -B -m unittest discover -s scripts -p 'test_*.py'
+git diff --check
+brew style Formula/foundrylocal.rb
+```
+
+On an Apple Silicon Mac running macOS 15 or newer, also verify installation and
+the formula's runtime assertions:
+
+```sh
+brew reinstall --build-from-source ./Formula/foundrylocal.rb
+brew test foundrylocal
+```
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
